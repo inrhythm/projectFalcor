@@ -1,0 +1,18 @@
+//
+// Kill margins and paddings
+//
+@mixin flatten {
+   margin: 0;
+   padding: 0;
+}
+
+//
+// Clearfix
+//
+@mixin clearfix {
+   &::after {
+      clear: both;
+      content: "";
+      display: block;
+   }
+}

@@ -1,0 +1,24 @@
+{
+   "people": [
+      {
+         "id": 1,
+         "email_id": "foo@bar.com",
+         "name": "full name",
+         "title": "title",
+         "image_url": "/foo.jpg",
+         "biography": "ipsum",
+         "department": ["engineering", "operations", "sales"],
+         "social_media": [
+            {"linkedin": "foo.com"},
+            {"website": "foo.com"},
+            {"github": "foo.com"},
+            {"slack": "slack_name"}
+         ],
+         "questions": [{
+            "question": "Tell us something no one knows about you",
+            "answer": "answer"
+         }],
+         "is_active": false
+      }
+   ]
+ }

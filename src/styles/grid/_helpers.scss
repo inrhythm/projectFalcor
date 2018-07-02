@@ -1,0 +1,94 @@
+$block-width: 100% / $grid-columns;
+
+@mixin column($value) {
+   @if ($value != 'auto' or $value != auto) {
+      $value: $value * $block-width;
+   }
+
+   display: block;
+   flex: 1 0 $value;
+   max-width: $value;
+   padding-left: $grid-gutter / 2;
+   padding-right: $grid-gutter / 2;
+   position: relative;
+}
+
+@mixin push($value) {
+   margin-left: $value * $block-width;
+}
+
+@mixin pull($value) {
+   margin-left: auto;
+   margin-right: $value * $block-width;
+}
+
+@mixin align($key:"") {
+   .align {
+      &-content {
+         &-#{$key}start { align-content: flex-start; }
+         &-#{$key}end { align-content: flex-end; }
+         &-#{$key}center { align-content: center; }
+         &-#{$key}between { align-content: space-between; }
+         &-#{$key}around { align-content: space-around; }
+         &-#{$key}stretch { align-content: stretch; }
+      }
+      &-items {
+         &-#{$key}start { align-items: flex-start; }
+         &-#{$key}end { align-items: flex-end; }
+         &-#{$key}center { align-items: center; }
+         &-#{$key}baseline { align-items: baseline; }
+         &-#{$key}stretch { align-items: stretch; }
+      }
+   }
+}
+
+@mixin direction($key:"") {
+   .direction {
+      &-#{$key}row { flex-direction: row; }
+      &-#{$key}row-reverse { flex-direction: row-reverse; }
+      &-#{$key}col { flex-direction: column; }
+      &-#{$key}col-reverse { flex-direction: column-reverse; }
+   }
+}
+
+@mixin wrap($key:"") {
+   .#{$key}wrap {
+      flex-wrap: wrap;
+
+      &-#{$key}none { flex-wrap: nowrap; }
+      &-#{$key}reverse { flex-wrap: wrap-reverse; }
+   }
+}
+
+@mixin justify($key: "") {
+   .justify {
+      &-#{$key}start { justify-content: flex-start; }
+      &-#{$key}end { justify-content: flex-end; }
+      &-#{$key}center { justify-content: center; }
+      &-#{$key}between { justify-content: space-between; }
+      &-#{$key}around { justify-content: space-around; }
+      &-#{$key}evenly { justify-content: space-evenly; }
+   }
+}
+
+@mixin mq-col-setup($key: "") {
+   @for $i from 1 through $grid-columns {
+      .col-#{$key}#{$i} { @include column($i);}
+      .order-#{$key}#{$i} { order: $i; }
+      .pull-#{$key}#{$i} { @include pull($i); }
+      .push-#{$key}#{$i} { @include push($i); }
+   }
+}
+
+@mixin grid($key: "") {
+   @include mq-col-setup("#{$key}-");
+
+   @include align("#{$key}-");
+   @include direction("#{$key}-");
+   @include justify("#{$key}-");
+   @include wrap("#{$key}-");
+
+   .col-#{$key} { @include column(auto); }
+   .hide-#{$key} { display: none; }
+   .show-#{$key} { display: block; }
+}
