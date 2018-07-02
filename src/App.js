@@ -5,6 +5,17 @@ import MasonryGallery from "./components/masonry_component.js";
 import FilterDropdown from "./components/filter_dropdown_component.js";
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = { filterBy: "all" };
+  }
+
+  setFilter = filterBy => {
+    console.log(filterBy);
+    this.setState({ filterBy });
+  }
+
   render() {
     const people = [
       {
@@ -24,8 +35,20 @@ class App extends Component {
     ];
     return (
       <div className="App">
-        <FilterDropdown />
-        <MasonryGallery people={people} />
+        <FilterDropdown 
+          setFilter={this.setFilter}
+        />
+
+
+        {this.state.filterBy === "all" ? (
+          <MasonryGallery people={people} />
+        ) : (
+          <MasonryGallery
+            people={people.filter(
+              person => person.team === this.state.filterBy
+            )}
+          />
+        )}
       </div>
     );
   }
