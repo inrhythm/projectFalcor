@@ -29,6 +29,7 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "react": "^16.4.1",
     "node-sass": "^4.0.0",
     "normalize.css": "^8.0.0",
     "object-assign": "4.1.1",
@@ -53,7 +54,7 @@
   },
   "scripts": {
     "css": "node-sass --output-style='nested' --sourcemap=none ./src/styles/main.scss -o ./public/css/",
-    "start": "node scripts/start.js",
+    "start": "node scripts/start.js & node mocks/server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
@@ -102,6 +103,7 @@
   "devDependencies": {
     "postcss-nested": "^3.0.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.19.0"
+    "style-loader": "^0.19.0",
+    "express": "^4.16.3"
   }
 }
