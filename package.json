@@ -22,8 +22,11 @@
     "onchange": "^3.0.0"
   },
   "scripts": {
-    "css": "node-sass --output-style='nested' --sourcemap=none ./src/styles/main.scss -o ./public/css/",
+    "css": "npm-run-all css:sass css:postcss",
+    "css:sass": "node-sass --output-style='nested' --sourcemap=none ./src/styles/main.scss -o ./public/css/",
     "css:postcss": "postcss ./public/css/*.css --replace --config ./postcss.config.js",
+    "watch:css": "onchange './src/styles/**/*.scss' -v -i -- npm run css",
+    "falkor:start": "npm run start & npm run watch:css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
