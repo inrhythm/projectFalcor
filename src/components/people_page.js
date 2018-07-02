@@ -113,18 +113,28 @@ class FilterPage extends Component {
 =======
 		const people = [
 			{
-				src: "https://assets.time.com/assets/desktop-loop-poster.jpg",
-				team: "dev"
+				image1:
+					"https://assets.time.com/assets/desktop-loop-poster.jpg",
+				image2: "url",
+				name: "foo",
+				job_title: "bar",
+				department: "dev"
 			},
 			{
-				src:
+				image1:
 					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
-				team: "ops"
+				image2: "url",
+				name: "foo1",
+				job_title: "bar1",
+				department: "ops"
 			},
 			{
-				src:
+				image1:
 					"https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_",
-				team: "sales"
+				image2: "url",
+				name: "foo2",
+				job_title: "bar2",
+				department: "sales"
 			}
 		];
 
@@ -137,7 +147,7 @@ class FilterPage extends Component {
 				) : (
 					<MasonryGallery
 						people={people.filter(
-							person => person.team === this.state.filterBy
+							person => person.department === this.state.filterBy
 						)}
 					/>
 				)}
