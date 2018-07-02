@@ -1,27 +1,18 @@
-import React, { Component } from 'react';
-import Masonry from 'react-masonry-component';
- 
+import React, { Component } from "react";
+import Masonry from "react-masonry-component";
+
 const masonryOptions = {
-    transitionDuration: 0
+	transitionDuration: 0
 };
 
-
 class Gallery extends React.Component {
-    render() {
-        /*const childElements = this.props.elements.map(function(element){
-           return (
-                <li className="image-element-class">
-                    <img src={element.src} />
-                </li>
-            );
-        });*/
-    
-        return (
-            <Masonry>
-            	
-            </Masonry>
-        );
-    }
+	render() {
+		const childElements = this.props.people.map(person => (
+			<img className="image-element-class" src={person.src} />
+		));
+
+		return <Masonry>{childElements}</Masonry>;
+	}
 }
- 
+
 export default Gallery;
