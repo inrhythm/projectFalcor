@@ -2,16 +2,22 @@ import React, { Component } from "react";
 import Masonry from "react-masonry-component";
 
 const masonryOptions = {
-	transitionDuration: 0
+	transitionDuration: 1000
 };
 
 class Gallery extends React.Component {
 	render() {
 		const childElements = this.props.people.map(person => (
-			<img className="image-element-class" src={person.src} />
+			<img className="image-element-class" src={person.image1} />
 		));
 
-		return <Masonry>{childElements}</Masonry>;
+		return (
+			<Masonry 
+			options={masonryOptions}
+			>
+				{childElements}
+			</Masonry>
+		);
 	}
 }
 
