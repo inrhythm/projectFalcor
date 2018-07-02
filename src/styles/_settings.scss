@@ -1,0 +1,68 @@
+//
+// Grid Settings
+//
+$grid-columns: 12;
+$grid-gutter: auto;
+$grid-container-padding: 10px; // this is padding on the left/right
+
+//
+// Browser Sizes
+//
+$global-browser-min-size: 320px;
+$global-browser-max-size: 1440px;
+
+
+//
+// Media Query Values
+//
+$xs: 480px; // extra small
+$sm: 640px; // small
+$md: 768px; // medium
+$wd: 992px; // wide
+$xw: 1024px; // extra wide
+$lg: 1280px; // large
+$xl: 1366px; // extra large
+
+//
+// Mobile First
+//
+$xs-and-up: "min-width: #{$xs}";
+$sm-and-up: "min-width: #{$sm}";
+$md-and-up: "min-width: #{$md}";
+$wd-and-up: "min-width: #{$wd}";
+$xw-and-up: "min-width: #{$xw}";
+$lg-and-up: "min-width: #{$lg}";
+$xl-and-up: "min-width: #{$xl}";
+
+//
+// Between
+//
+$xs-to-sm: "min-width: #{$xs}) and (max-width: #{$sm}";
+$sm-to-md: "min-width: #{$sm}) and (max-width: #{$md}";
+$md-to-wd: "min-width: #{$md}) and (max-width: #{$wd}";
+$wd-to-xw: "min-width: #{$wd}) and (max-width: #{$xw}";
+$xw-to-lg: "min-width: #{$xw}) and (max-width: #{$lg}";
+$lg-to-xl: "min-width: #{$lg}) and (max-width: #{$xl}";
+
+//
+// Use these when your designer doesn't know how
+// to give a fucking mobile and tablet views
+//
+$xs-and-down: "max-width: #{$xs}";
+$sm-and-down: "max-width: #{$sm}";
+$md-and-down: "max-width: #{$md}";
+$wd-and-down: "max-width: #{$wd}";
+$xw-and-down: "max-width: #{$xw}";
+$lg-and-down: "max-width: #{$lg}";
+$xl-and-down: "max-width: #{$xl}";
+
+//
+// Fonts
+//
+$system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font: '';
+$display-font: '';
+
+//
+// Colors
+//

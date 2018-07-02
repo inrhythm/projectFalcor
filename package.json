@@ -5,9 +5,13 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "node-sass": "^4.0.0",
+    "normalize.css": "^8.0.0",
+    "shelljs": "^0.8.0"
   },
   "scripts": {
+    "css": "node-sass --output-style='nested' --sourcemap=none ./src/styles/main.scss -o ./public/css/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
