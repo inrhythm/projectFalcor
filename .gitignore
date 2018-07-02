@@ -61,5 +61,5 @@ typings/
 .next
 
 #Intellij idea stuff
-.idea/
+.idea
 .DS_Store
