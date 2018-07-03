@@ -27,11 +27,42 @@
   to { transform: rotate(360deg); }
 }
 
+.image-container {
+  /*position: relative;*/
+}
+
 .image-element-class {
-  max-width: 50rem;
+  /*position: absolute;*/
+  width: 25rem;
+  height: 45rem;
   transition: opacity 0.7s;
+}
+
+.main-img:hover {
+  opacity: 0; 
+}
+
+.image-container.brought-to-front{
+  order: 0;
+}
+
+.image-container.sent-to-rear{
+  order: 1;
 }
 
 .greyed-out {
   opacity: .4;
+}
+
+.hover-img {
+  opacity: .0;
+  margin-left: -25rem;
+}
+.not-greyed-out.hover-img:hover {
+  opacity: 1;
+}
+
+.people-grid {
+  display: flex;
+  justify-content: space-evenly;
 }

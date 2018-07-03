@@ -1,24 +1,18 @@
 import React, { Component } from "react";
-import Masonry from "react-masonry-component";
 
-const masonryOptions = {
-	transitionDuration: 0
-	// transitionDuration: 1000
-};
+import Image from './image-component.js';
 
 class Gallery extends React.Component {
 	render() {
-		console.log(this.props.people)
 		const childElements = this.props.people.map(person => (
-			<img className={"image-element-class" + (person.greyedOut ? " greyed-out" : "")} src={person.image1} />
+			<div className={"image-container "+ (!person.greyedOut ? "brought-to-front" : "sent-to-rear")}>
+				<Image className={"main-img image-element-class " + (person.greyedOut ? " greyed-out" : "not-greyed-out")} src={person.image1} />
+				<Image className={"hover-img image-element-class " + (person.greyedOut ? " greyed-out" : "not-greyed-out")} src={person.image2} />
+			</div>
 		));
 
 		return (
-			<Masonry 
-			options={masonryOptions}
-			>
-				{childElements}
-			</Masonry>
+			<div className="people-grid"> {childElements} </div>
 		);
 	}
 }
