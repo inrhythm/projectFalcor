@@ -155,15 +155,18 @@ module.exports = {
             test: /\.scss$/,
             include: paths.appSass,
             use: [
-            //   require.resolve('style-loader'),
-            //   {
-            //     loader: require.resolve('css-loader'),
-            //     options: {
-            //       importLoaders: 1,
-            //     },
-            //   },
+              require.resolve('style-loader'),
               {
-                loader: require.resolve('sass-loader')
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  importLoaders: 1,
+                },
               }
             ]
           },
@@ -191,7 +194,6 @@ module.exports = {
                   plugins: () => [
                     require('postcss-import'),
                     require('postcss-cssnext'),
-                    require('postcss-import'),
                     require('postcss-nested'),
                     require('postcss-flexbugs-fixes'),
                     require('postcss-pxtorem', {
