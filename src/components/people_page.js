@@ -6,7 +6,6 @@ import FilterDropdown from "./filter_dropdown_component.js";
 class FilterPage extends Component {
 	constructor() {
 		super();
-
 		this.state = { filterBy: "all" };
 	}
 
@@ -15,6 +14,7 @@ class FilterPage extends Component {
 	};
 
 	render() {
+		// Pretend this is from an ajax request or something
 		const people = [
 			{
 				image1:
@@ -42,19 +42,21 @@ class FilterPage extends Component {
 			}
 		];
 
+		const filteredPeople =
+			this.state.filterBy === "all"
+				? people.map(person => {
+						person.greyedOut = false;
+						return person;
+				  })
+				: people.map(person => {
+						person.greyedOut = !(person.department === this.state.filterBy);
+						return person;
+				  });
+
 		return (
 			<div>
 				<FilterDropdown setFilter={this.setFilter} />
-
-				{this.state.filterBy === "all" ? (
-					<MasonryGallery people={people} />
-				) : (
-					<MasonryGallery
-						people={people.filter(
-							person => person.department === this.state.filterBy
-						)}
-					/>
-				)}
+				<MasonryGallery people={filteredPeople} />
 			</div>
 		);
 	}
