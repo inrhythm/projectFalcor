@@ -1,70 +1,41 @@
 const express = require('express')
+const service = require('./service.js')
+const bodyParser = require('body-parser');
+
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello World!'))
+// parse application/json
+app.use(bodyParser.json())
+
+app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(3001, () => console.log('Example app listening on port 3001!'))
 
 app.get('/people/list',(req,res) => {
-	res.json({
-		people:[
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo",
-			job_title: "bar"
-		},
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo1",
-			job_title: "bar1"
-		},
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo2",
-			job_title: "bar2"
-		}],
-		count:3
-	})
+	res.json(service.getList());
 })
 
 app.get('/people/:id',(req,res) => {
-	res.json({
-		"Person":"Detail"
-	})
+	
+	const person = service.getPerson(req.params.id)
+	if(person){
+		res.json(person)
+	}
+	else{
+		res.status(404).json({
+			messege:"user not found"
+		})
+	}
 })
 
 app.get('/people/admin/list',(req,res) => {
-	res.json({
-		people:[
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo",
-			job_title: "bar"
-		},
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo1",
-			job_title: "bar1"
-		},
-		{
-			image1: "url",
-			image2: "url",
-			name: "foo2",
-			job_title: "bar2"
-		}],
-		count:3
-	})
+	res.json(service.getAdminList())
 })
 
-app.post('/people/:id',(res,req) => {
+app.post('/people',(req,res) => {
+	service.addPerson(req.body);
 	res.json({
-		Person:req.body,
-		status:"add Succufully"
+		messege:"user added successfully"
 	})
 })
 

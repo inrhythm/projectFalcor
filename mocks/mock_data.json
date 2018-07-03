@@ -1,0 +1,221 @@
+{
+   "people": [
+  {
+    "id": "kristiekerr",
+    "email": "kristiekerr@portica.com",
+    "name": "Guy Olson",
+    "title": "Full Stack Developer",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Nisi reprehenderit magna commodo minim cillum. Enim duis commodo in elit ea. Ipsum laboris exercitation ipsum ipsum laborum elit qui reprehenderit est. Et quis laborum nisi in laboris. Culpa qui reprehenderit consequat tempor occaecat voluptate labore magna cillum sunt irure. Cillum Lorem esse nostrud mollit. Qui non aute Lorem veniam.\r\n",
+    "department": "sales",
+    "social_media": [
+      {
+        "linkedin": "veniam"
+      },
+      {
+        "website": "tempor"
+      },
+      {
+        "github": "consequat"
+      },
+      {
+        "slack": "laboris"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": false
+  },
+  {
+    "id": "guyolson",
+    "email": "guyolson@portica.com",
+    "name": "Christian Ratliff",
+    "title": "React Developer",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Aute exercitation est sint veniam Lorem pariatur Lorem exercitation consectetur ex non. Non ea sunt voluptate ut adipisicing esse ad labore ut proident culpa enim. Nulla exercitation ipsum cillum officia dolor quis anim duis eiusmod tempor. Ut tempor id commodo excepteur enim tempor consequat et. Duis ex eiusmod cillum cupidatat sint aliquip laboris. Elit tempor dolor culpa sit ut excepteur velit.\r\n",
+    "department": "operations",
+    "social_media": [
+      {
+        "linkedin": "consequat"
+      },
+      {
+        "website": "exercitation"
+      },
+      {
+        "github": "ut"
+      },
+      {
+        "slack": "aliquip"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": true
+  },
+  {
+    "id": "christianratliff",
+    "email": "christianratliff@portica.com",
+    "name": "Lacy Preston",
+    "title": "Full Stack Developer",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Amet aliqua ad veniam consequat. Mollit labore deserunt tempor reprehenderit ullamco dolore minim sunt do adipisicing proident veniam voluptate in. Mollit qui incididunt in enim nulla et et deserunt ipsum ad in consectetur cillum laboris. Tempor deserunt veniam pariatur veniam aliquip aliquip.\r\n",
+    "department": "engineering",
+    "social_media": [
+      {
+        "linkedin": "enim"
+      },
+      {
+        "website": "proident"
+      },
+      {
+        "github": "labore"
+      },
+      {
+        "slack": "tempor"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": true
+  },
+  {
+    "id": "lacypreston",
+    "email": "lacypreston@portica.com",
+    "name": "Glover Gardner",
+    "title": "Full Stack Developer",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Sunt incididunt aliqua officia sint esse. Ad ipsum irure duis ea do reprehenderit mollit quis Lorem duis consectetur occaecat in commodo. Magna fugiat irure quis ipsum eiusmod veniam aliqua aliquip exercitation cupidatat adipisicing minim adipisicing. Occaecat excepteur consectetur veniam consequat cillum ullamco voluptate. Proident cillum ea voluptate aute ullamco ipsum veniam exercitation cillum qui non et.\r\n",
+    "department": "engineering",
+    "social_media": [
+      {
+        "linkedin": "ut"
+      },
+      {
+        "website": "consectetur"
+      },
+      {
+        "github": "id"
+      },
+      {
+        "slack": "enim"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": true
+  },
+  {
+    "id": "glovergardner",
+    "email": "glovergardner@portica.com",
+    "name": "Lynch Bullock",
+    "title": "Recruiter",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Non enim consequat est dolore aliqua incididunt ad esse nostrud consectetur adipisicing nisi. Fugiat amet sint eiusmod anim proident sit mollit duis tempor duis. Eu sint laborum aliquip cillum ad. Qui reprehenderit Lorem velit anim dolor in quis enim occaecat et est voluptate nulla. Velit voluptate voluptate in officia sint occaecat non commodo deserunt.\r\n",
+    "department": "operations",
+    "social_media": [
+      {
+        "linkedin": "aliqua"
+      },
+      {
+        "website": "est"
+      },
+      {
+        "github": "laborum"
+      },
+      {
+        "slack": "consectetur"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": true
+  },
+  {
+    "id": "lynchbullock",
+    "email": "lynchbullock@portica.com",
+    "name": "Carmen Gentry",
+    "title": "Recruiter",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Non ut minim aliquip duis velit consequat ullamco aliqua incididunt sint ea. Culpa commodo pariatur anim magna magna enim. Deserunt enim mollit adipisicing qui. Sint ex deserunt ex commodo deserunt consequat pariatur sunt occaecat. Pariatur magna mollit nulla est velit minim dolore anim reprehenderit est duis irure reprehenderit. Magna minim pariatur dolor tempor amet eu in laborum. Commodo voluptate adipisicing consectetur cillum laborum ea magna aliquip enim.\r\n",
+    "department": "engineering",
+    "social_media": [
+      {
+        "linkedin": "deserunt"
+      },
+      {
+        "website": "sit"
+      },
+      {
+        "github": "sit"
+      },
+      {
+        "slack": "qui"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": false
+  },
+  {
+    "id": "carmengentry",
+    "email": "carmengentry@portica.com",
+    "name": "Barrett Dyer",
+    "title": "Account Manager",
+    "image_url1": "https://picsum.photos/200/300/?random",
+    "image_url2": "https://picsum.photos/200/300/?random",
+    "biography": "Laborum cupidatat ad aliquip ipsum elit reprehenderit velit nulla amet deserunt dolor. In sint voluptate labore pariatur aute id nostrud consectetur magna. Non eu proident Lorem magna id commodo non voluptate esse est incididunt incididunt laboris. In veniam velit voluptate officia amet qui exercitation est ut duis id ipsum. Veniam commodo veniam Lorem occaecat do sunt enim pariatur reprehenderit occaecat deserunt cupidatat.\r\n",
+    "department": "operations",
+    "social_media": [
+      {
+        "linkedin": "est"
+      },
+      {
+        "website": "ullamco"
+      },
+      {
+        "github": "exercitation"
+      },
+      {
+        "slack": "anim"
+      }
+    ],
+    "questions": [
+      {
+        "question": "Tell us something no one knows about you",
+        "answer": "answer"
+      }
+    ],
+    "is_active": false
+  }
+]
+ }
