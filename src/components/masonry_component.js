@@ -4,7 +4,6 @@ import Image from './image-component.js';
 
 class Gallery extends React.Component {
 	render() {
-		console.log(this.props.people)
 		const childElements = this.props.people.map(person => (
 			<div className={"image-container "+ (!person.greyedOut ? "brought-to-front" : "sent-to-rear")}>
 			<a className="person" href="#">
