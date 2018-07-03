@@ -152,31 +152,8 @@ module.exports = {
             },
           },
           {
-            test: /\.scss$/,
+            test: /\.scss|.css$/,
             include: [paths.appSass, paths.appSrc],
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                },
-              },
-              {
-                loader: require.resolve('sass-loader'),
-                options: {
-                  importLoaders: 1,
-                },
-              }
-            ]
-          },
-          // "postcss" loader applies autoprefixer to our CSS.
-          // "css" loader resolves paths in CSS and adds assets as dependencies.
-          // "style" loader turns CSS into JS modules that inject <style> tags.
-          // In production, we use a plugin to extract that CSS to a file, but
-          // in development "style" loader enables hot editing of CSS.
-          {
-            test: /\.css$/,
             use: [
               require.resolve('style-loader'),
               {
@@ -197,11 +174,11 @@ module.exports = {
                     require('postcss-nested'),
                     require('postcss-flexbugs-fixes'),
                     require('postcss-pxtorem', {
-                       rootValue: 16,
-                       mediaQuery: false
-                     }),
-                    require('postcss-mqpacker'),
-                    require('postcss-cssnano', {"autoprefixer": false}),
+                      rootValue: 16,
+                      mediaQuery: false
+                    }),
+                    require('css-mqpacker'),
+                    require('cssnano', {"autoprefixer": false}),
                     autoprefixer({
                       browsers: [
                         '>1%',
@@ -214,7 +191,13 @@ module.exports = {
                   ],
                 },
               },
-            ],
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              }
+            ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
