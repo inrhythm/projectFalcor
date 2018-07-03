@@ -28,11 +28,10 @@
 }
 
 .image-container {
-  /*position: relative;*/
+  margin-bottom: 2rem;
 }
 
 .image-element-class {
-  /*position: absolute;*/
   width: 25rem;
   height: 45rem;
   transition: opacity 0.7s;
