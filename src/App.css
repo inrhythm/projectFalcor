@@ -29,4 +29,9 @@
 
 .image-element-class {
   max-width: 50rem;
+  transition: opacity 0.7s;
+}
+
+.greyed-out {
+  opacity: .4;
 }
