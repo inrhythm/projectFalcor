@@ -18,6 +18,13 @@
             "question": "Tell us something no one knows about you",
             "answer": "answer"
          }],
+         "supported_causes": [
+            {"title": "name", "url": "https://foobar.com"}
+         ],
+         "portfolio": "https://google.com",
+         "selected_works": [
+            {"title": "name", "url": "https://foobar.com"}
+         ],
          "is_active": false
       }
    ]
