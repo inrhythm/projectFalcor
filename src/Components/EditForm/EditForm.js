@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './EditForm.scss';
 
 export default class Form extends Component {
      constructor(props) {
@@ -26,48 +27,48 @@ export default class Form extends Component {
                 isActive: true,
                 isValid: false
             },
-            
+
             errors: {}
         };
-         
+
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handleEmailBlur = this.handleEmailBlur.bind(this);
-        
+
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleNameBlur = this.handleNameBlur.bind(this);
-        
+
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleTitleBlur = this.handleTitleBlur.bind(this);
-        
+
         this.handleImageChange = this.handleImageChange.bind(this);
-        
+
         this.handleBiographyChange = this.handleBiographyChange.bind(this);
         this.handleBiographyBlur = this.handleBiographyBlur.bind(this);
-        
+
         this.handleDepartmentChange = this.handleDepartmentChange.bind(this);
-        
+
         this.handleSlackChange = this.handleSlackChange.bind(this);
         this.handleSlackBlur = this.handleSlackBlur.bind(this);
-        
+
         this.handleLinkedinChange = this.handleLinkedinChange.bind(this);
         this.handleLinkedinBlur = this.handleLinkedinBlur.bind(this);
-        
+
         this.handleGithubChange = this.handleGithubChange.bind(this);
-        
+
         this.handleWebsiteChange = this.handleWebsiteChange.bind(this);
-        
+
         this.handleQuestionChange = this.handleQuestionChange.bind(this);
         this.handleQuestionBlur = this.handleQuestionBlur.bind(this);
-        
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancelClick = this.handleCancelClick.bind(this);
         this.image = React.createRef();
     }
-     
+
     handleEmailChange(event) {
-        
+
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.emailId = value
             return state
@@ -75,7 +76,7 @@ export default class Form extends Component {
     }
     handleEmailBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.emailId = "Please enter a valid InRhythm Email"
@@ -93,12 +94,12 @@ export default class Form extends Component {
             })
         }
     }
-    
-    
+
+
     handleNameChange(event) {
-        
+
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.name = value
             return state
@@ -106,7 +107,7 @@ export default class Form extends Component {
     }
     handleNameBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.name = "Please enter a your name"
@@ -119,11 +120,11 @@ export default class Form extends Component {
             })
         }
     }
-    
-    
+
+
     handleTitleChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.title = value
             return state
@@ -131,7 +132,7 @@ export default class Form extends Component {
     }
     handleTitleBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.title = "Please enter a title"
@@ -144,21 +145,21 @@ export default class Form extends Component {
             })
         }
     }
-    
-         
+
+
     handleImageChange(event) {
         const image = this.image.current.files[0]
-        
+
         this.setState(state => {
             state.formData.image = image
             return state
         })
     }
-    
-    
+
+
     handleBiographyChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.biography = value
             return state
@@ -166,7 +167,7 @@ export default class Form extends Component {
     }
     handleBiographyBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.biography = "Please enter a biography"
@@ -179,11 +180,11 @@ export default class Form extends Component {
             })
         }
     }
-    
-    
+
+
     handleDepartmentChange(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.department = "Please select a department"
@@ -195,17 +196,17 @@ export default class Form extends Component {
                 return state
             })
         }
-        
+
         this.setState(state => {
             state.formData.department = value
             return state
         })
     }
-    
-    
+
+
     handleSlackChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.socialMedia.slack = value
             return state
@@ -213,7 +214,7 @@ export default class Form extends Component {
     }
     handleSlackBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.slack = "Please enter a Slack username"
@@ -226,10 +227,10 @@ export default class Form extends Component {
             })
         }
     }
-    
+
     handleLinkedinChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.socialMedia.linkedin = value
             return state
@@ -237,7 +238,7 @@ export default class Form extends Component {
     }
     handleLinkedinBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.linkedin = "Please enter a LinkedIn URL"
@@ -250,31 +251,31 @@ export default class Form extends Component {
             })
         }
     }
-    
-    
+
+
     handleGithubChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.socialMedia.github = value
             return state
         })
     }
-    
-    
+
+
     handleWebsiteChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.socialMedia.website = value
             return state
         })
     }
-    
-    
+
+
     handleQuestionChange(event) {
         const value = event.target.value
-        
+
         this.setState(state => {
             state.formData.questions[0].answer = value
             return state
@@ -282,7 +283,7 @@ export default class Form extends Component {
     }
     handleQuestionBlur(event) {
         const value = event.target.value
-        
+
         if(!value.length) {
             this.setState(state => {
                 state.errors.question = "Please enter an answer"
@@ -295,27 +296,27 @@ export default class Form extends Component {
             })
         }
     }
-    
+
     // canSubmit () {
-        
+
     //     for(var data in this.state.errors) {
     //         if(data !== null) {
     //             return false
     //         }
-            
+
     //         return true
     //     }
-        
+
         // this.state.errors.forEach((data, index) => {
         //     if (data) {
         //         return false;
         //     }
         // })
         // return (
-            
+
         // )
     // }
-    
+
     // check if the data can be submitted -- validating data
     // canSubmit () {
     //     const { emailId, name, title, department, socialMedia } = this.state.formData;
@@ -330,7 +331,7 @@ export default class Form extends Component {
     //         && socialMedia.slack.length > 0
     //     );
     // }
-    
+
     handleSubmit(event) {
         // if(!this.canSubmit()){
             event.preventDefault();
@@ -338,20 +339,20 @@ export default class Form extends Component {
         // }
         // console.log('Form Submitted')
     }
-    
+
     handleCancelClick(event) {
         event.preventDefault();
         console.log('Form Cancelled')
     }
-    
+
     render() {
         // const isEnabled = this.canSubmit();
         // console.log(this.canSubmit())
-        
+
         return (
             <div className="form--cntr">
                     <form onSubmit={this.handleSubmit}>
-                    <img src={this.state.image}/>
+                    <img src={this.state.image} alt="" />
                         <div>
                             <label>
                                 Email:
@@ -366,7 +367,7 @@ export default class Form extends Component {
                             </label>
                             { this.state.errors.name ? <span>{this.state.errors.name}</span> : '' }
                         </div>
-                        
+
                         <div>
                             <label>
                                 Title:
@@ -374,14 +375,14 @@ export default class Form extends Component {
                             </label>
                             { this.state.errors.title ? <span>{this.state.errors.title}</span> : '' }
                         </div>
-                        
+
                         <div>
                             <label>
                                 Upload Image:
                                 <input type="file" name="image" onChange={this.handleImageChange} ref={this.image} required/>
                             </label>
                         </div>
-                        
+
                         <div>
                             <label>
                                 Biography:
@@ -389,7 +390,7 @@ export default class Form extends Component {
                             </label>
                             { this.state.errors.biography ? <span>{this.state.errors.biography}</span> : '' }
                         </div>
-                        
+
                         <div>
                             <label>
                                 Department:
@@ -402,7 +403,7 @@ export default class Form extends Component {
                             </label>
                             { this.state.errors.department ? <span>{this.state.errors.department}</span> : '' }
                         </div>
-                        
+
                         <div>
                             <label>
                                 Slack Username:
@@ -417,21 +418,21 @@ export default class Form extends Component {
                         </label>
                         { this.state.errors.linkedin ? <span>{this.state.errors.linkedin}</span> : '' }
                     </div>
-                    
+
                     <div>
                         <label>
                             GitHub Username:
                             <input type="text" name="github" onChange={this.handleGithubChange}/>
                         </label>
                     </div>
-                    
+
                     <div>
                         <label>
                             Website:
                             <input type="text" name="website" onChange={this.handleWebsiteChange}/>
                         </label>
                     </div>
-                    
+
                     <div>
                         <label>
                             <span>{this.state.formData.questions[0].question}</span>
@@ -439,7 +440,7 @@ export default class Form extends Component {
                         </label>
                         { this.state.errors.question ? <span>{this.state.errors.question}</span> : '' }
                     </div>
-                    
+
                     <div>
                         <span onClick={this.handleCancelClick}>Cancel</span>
                         <input type="submit" value="Submit" />
