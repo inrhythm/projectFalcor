@@ -1,15 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './Components/People/people_page'
-import Register from './Components/PersonEdit/PersonEdit'
+import People_page from './Components/People/people_page'
+import PersonEdit from './Components/PersonEdit/PersonEdit'
 
 const Router = () => (
-  <div>
-    <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/register' component={Register}/>
-    </Switch>
-  </div>
+	<Switch>
+	  <Route exact path='/' component={People_page}/>
+	  <Route path='/register' component={PersonEdit}/>
+	</Switch>
 )
 
 export default Router

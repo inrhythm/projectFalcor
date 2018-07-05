@@ -1,15 +1,15 @@
 import React from 'react';
 import './styles/main.scss';
-import { Link } from 'react-router-dom'
-import Router from './router'
+import { Link } from 'react-router-dom';
+import Router from './router';
+import Header from './Components/header.js';
 
 class App extends React.Component {
 
    render() {
       return (
         <div>
-          <Link to='/'>Home</Link> <br/>
-          <Link to='/register'>register</Link>
+          <Header />
           <Router />
         </div>
       );
