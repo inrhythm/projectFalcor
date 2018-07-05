@@ -107,7 +107,6 @@ class PersonEdit extends React.Component {
          
       } else {
          this.clearFieldValidationErrors('name')
-         
       }
    }
    
@@ -128,7 +127,6 @@ class PersonEdit extends React.Component {
          
       } else {
          this.clearFieldValidationErrors('title')
-         
       }
    }
 
@@ -159,7 +157,6 @@ class PersonEdit extends React.Component {
          
       } else {
          this.clearFieldValidationErrors('biography')
-         
       }
    }
 
@@ -221,7 +218,6 @@ class PersonEdit extends React.Component {
          
       } else {
          this.clearFieldValidationErrors('linkedin')
-         
       }
    }
 
@@ -285,12 +281,12 @@ class PersonEdit extends React.Component {
    }
 
    handleSubmit(event) {
-      event.preventDefault();
+      event.preventDefault()
       alert('submitted')
    }
 
    handleCancelClick(event) {
-      event.preventDefault();
+      event.preventDefault()
       console.log('Form Cancelled')
    }
    
@@ -332,7 +328,7 @@ class PersonEdit extends React.Component {
    }
 
    render() {
-      const isEnabled = this.canSubmit();
+      const isEnabled = this.canSubmit()
 
       return (
          <div className="edit-form container">
@@ -342,21 +338,21 @@ class PersonEdit extends React.Component {
                   <div>
                      <label>
                         Email:
-                        <input type="email" name="email_id" onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} required />
+                        <input type="email" name="email_id" className={(this.getValidationError('emailId') ? 'error' : '')} onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} required />
                      </label>
                      { this.getValidationError('emailId') ? <span>{this.getValidationError('emailId')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Name:
-                        <input type="text" name="name" onChange={this.handleNameChange} onBlur={this.handleNameBlur} required/>
+                        <input type="text" name="name" className={(this.getValidationError('name') ? 'error' : '')} onChange={this.handleNameChange} onBlur={this.handleNameBlur} required/>
                      </label>
                      { this.getValidationError('name') ? <span>{this.getValidationError('name')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Title:
-                        <input type="text" name="title" onChange={this.handleTitleChange} onBlur={this.handleTitleBlur} required/>
+                        <input type="text" name="title" className={(this.getValidationError('title') ? 'error' : '')} onChange={this.handleTitleChange} onBlur={this.handleTitleBlur} required/>
                      </label>
                      { this.getValidationError('title') ? <span>{this.getValidationError('title')}</span> : '' }
                   </div>
@@ -369,14 +365,14 @@ class PersonEdit extends React.Component {
                   <div>
                      <label>
                         Biography:
-                        <textarea name="biography" onChange={this.handleBiographyChange} onBlur={this.handleBiographyBlur} required/>
+                        <textarea name="biography" className={(this.getValidationError('biography') ? 'error' : '')} onChange={this.handleBiographyChange} onBlur={this.handleBiographyBlur} required/>
                      </label>
                      { this.getValidationError('biography') ? <span>{this.getValidationError('biography')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Department:
-                        <select name="department" onChange={this.handleDepartmentChange} required>
+                        <select name="department" className={(this.getValidationError('department') ? 'error' : '')} onChange={this.handleDepartmentChange} required>
                            <option value="">Select Department</option>
                            <option value="engineering">Engineering</option>
                            <option value="operations">Operations</option>
@@ -388,21 +384,21 @@ class PersonEdit extends React.Component {
                   <div>
                      <label>
                         Slack Username:
-                        <input type="text" name="slack" onChange={this.handleSlackChange} onBlur={this.handleSlackBlur} required/>
+                        <input type="text" name="slack" className={(this.getValidationError('slack') ? 'error' : '')} onChange={this.handleSlackChange} onBlur={this.handleSlackBlur} required/>
                      </label>
                      { this.getValidationError('slack') ? <span>{this.getValidationError('slack')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         LinkedIn:
-                        <input type="text" name="linkedin" onChange={this.handleLinkedinChange} onBlur={this.handleLinkedinBlur} required/>
+                        <input type="text" name="linkedin" className={(this.getValidationError('linkedin') ? 'error' : '')} onChange={this.handleLinkedinChange} onBlur={this.handleLinkedinBlur} required/>
                      </label>
                      { this.getValidationError('linkedin') ? <span>{this.getValidationError('linkedin')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         GitHub Username:
-                        <input type="text" name="github" onChange={this.handleGithubChange}/>
+                        <input type="text" name="github" className={(this.getValidationError('github') ? 'error' : '')} onChange={this.handleGithubChange}/>
                      </label>
                   </div>
                   <div>
@@ -414,7 +410,7 @@ class PersonEdit extends React.Component {
                   <div>
                      <label>
                         <span>{this.state.formData.questions[0].question}</span>
-                        <textarea name="question" onChange={this.handleQuestionChange} onBlur={this.handleQuestionBlur} required></textarea>
+                        <textarea name="question" className={(this.getValidationError('question') ? 'error' : '')} onChange={this.handleQuestionChange} onBlur={this.handleQuestionBlur} required></textarea>
                      </label>
                      { this.getValidationError('question') ? <span>{this.getValidationError('question')}</span> : '' }
                   </div>
