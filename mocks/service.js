@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var data = fs.readFileSync("mock_data.json");
+var data = fs.readFileSync("./mocks/mock_data.json");
 
 var jsonData = JSON.parse(data);
 

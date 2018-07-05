@@ -1,0 +1,29 @@
+.update-form--container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px 50px;
+  font-size: 14px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:hover {
+    transition: .3s all ease;
+  }
+}
+
+.orange-button {
+  background: $color-orange;
+  color: $color-white;
+  border: 1px solid $color-orange;
+  
+  &:hover {
+    background: $color-white;
+    color: $color-orange;
+  }
+}
