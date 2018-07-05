@@ -132,7 +132,11 @@ class PersonEdit extends React.Component {
 
 
    handleImageChange(event) {
-      const image = this.image.current.files[0]
+      let image = this.image.current.files[0]
+      
+      if(!image) {
+         image = null
+      }
 
       this.setState(state => {
          state.formData.image = image
@@ -262,12 +266,13 @@ class PersonEdit extends React.Component {
    }
 
    canSubmit () {
-      const { emailId, name, title, department, socialMedia, questions } = this.state.formData;
+      const { emailId, name, image, title, department, socialMedia, questions } = this.state.formData;
       let fieldsRules = (
            emailId.length > 13
            && name.length > 0
            && title.length > 0
            && department !== null
+           && image !== null
            && socialMedia.linkedin.length > 0
            && socialMedia.slack.length > 0
            && questions[0].answer.length > 0
@@ -300,7 +305,7 @@ class PersonEdit extends React.Component {
          }
       })
       
-      this.setState({errors: errors})
+      this.setState({errors})
    }
    
    createValidationError(field, message) {
@@ -314,14 +319,14 @@ class PersonEdit extends React.Component {
       
       errors.push({field: field, message: message})
          
-      this.setState({errors: errors})
+      this.setState({errors})
    }
    
    getValidationError(field) {
       let err;
       this.state.errors.forEach((error, index) => {
          if(error.field === field) {
-            err = error.message 
+            err = error.message
          }
       })
       return err
