@@ -43,6 +43,7 @@
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
     "shelljs": "^0.8.0",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -53,9 +54,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-   "script:start": "node scripts/start.js",
-   "script:serve": "node mocks/server.js",
-   "start": "npm-run-all script:start script:serve",
+    "script:start": "node scripts/start.js",
+    "script:serve": "node mocks/server.js",
+    "start": "npm-run-all script:start script:serve",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
