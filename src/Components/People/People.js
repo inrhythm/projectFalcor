@@ -18,72 +18,72 @@ class People extends Component {
 		const people = [
 			{
 				image1:
-					"https://assets.time.com/assets/desktop-loop-poster.jpg",
-				image2: "http://img.timeinc.net/time/daily/2012/1211/poy_benbernanke.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo",
 				job_title: "bar",
 				department: "dev"
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
-				image2: "https://www.incimages.com/uploaded_files/image/970x450/getty_504134147_174741.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
 				department: "ops"
 			},
 			{
 				image1:
-					"https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_",
-				image2: "https://timedotcom.files.wordpress.com/2017/12/wendy-walsh-person-of-year-2017-time-magazine-2.jpg?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
 			},
 			{
 				image1:
-					"https://assets.time.com/assets/desktop-loop-poster.jpg",
-				image2: "http://img.timeinc.net/time/daily/2012/1211/poy_benbernanke.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo",
 				job_title: "bar",
 				department: "dev"
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
-				image2: "https://www.incimages.com/uploaded_files/image/970x450/getty_504134147_174741.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
 				department: "ops"
 			},
 			{
 				image1:
-					"https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_",
-				image2: "https://timedotcom.files.wordpress.com/2017/12/wendy-walsh-person-of-year-2017-time-magazine-2.jpg?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
 			},
 			{
 				image1:
-					"https://assets.time.com/assets/desktop-loop-poster.jpg",
-				image2: "http://img.timeinc.net/time/daily/2012/1211/poy_benbernanke.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo",
 				job_title: "bar",
 				department: "dev"
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
-				image2: "https://www.incimages.com/uploaded_files/image/970x450/getty_504134147_174741.jpg",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
 				department: "ops"
 			},
 			{
 				image1:
-					"https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_",
-				image2: "https://timedotcom.files.wordpress.com/2017/12/wendy-walsh-person-of-year-2017-time-magazine-2.jpg?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
@@ -103,6 +103,7 @@ class People extends Component {
 
 		return (
 			<div>
+				<div className="page-title-div">Our People</div>
 				<FilterDropdown setFilter={this.setFilter} />
 				<MasonryGallery people={filteredPeople} />
 			</div>
