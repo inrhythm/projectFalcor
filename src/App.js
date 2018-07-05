@@ -1,8 +1,6 @@
 import React from 'react';
-import './styles/main.scss';
-import PersonEdit from './Components/PersonEdit/PersonEdit';
-import Login from './Components/Login/Login';
 import Routes from './Routes';
+import './styles/main.scss';
 
 class App extends React.Component {
 
