@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles/main.scss';
-import EditForm from './Components/EditForm/EditForm';
+import PersonEdit from './Components/PersonEdit/PersonEdit';
 
 class App extends React.Component {
 
    render() {
       return (
-         <div className="App">
-            <EditForm />
+         <div className="app">
+            <PersonEdit />
          </div>
       );
    }

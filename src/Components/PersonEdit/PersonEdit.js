@@ -1,7 +1,7 @@
 import React from 'react';
-import './EditForm.scss';
+import './PersonEdit.scss';
 
-class EditForm extends React.Component {
+class PersonEdit extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
@@ -444,4 +444,4 @@ class EditForm extends React.Component {
    }
 }
 
-export default EditForm;
+export default PersonEdit;
