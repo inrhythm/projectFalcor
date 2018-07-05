@@ -17,7 +17,6 @@ class Gallery extends React.Component {
 		return (
 			<div className="people-grid"> {childElements} </div>
 		);
-
 	}
 }
 
