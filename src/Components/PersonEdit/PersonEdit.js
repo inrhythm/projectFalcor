@@ -28,7 +28,7 @@ class PersonEdit extends React.Component {
             isValid: false
          },
 
-         errors: {}
+         errors: []
       };
 
       this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -74,24 +74,18 @@ class PersonEdit extends React.Component {
          return state
       })
    }
+   
    handleEmailBlur(event) {
       const value = event.target.value
-
+      
       if(!value.length) {
-         this.setState(state => {
-            state.errors.emailId = "Please enter a valid InRhythm Email"
-            return state
-         })
+         this.createValidationError('emailId', 'Please enter a valid InRhythm Email')
+         
       } else if(!value.includes('@inrhythm.com')) {
-         this.setState(state => {
-            state.errors.emailId = "Must be your InRhythm Email Address"
-            return state
-         })
+         this.createValidationError('emailId', 'Must be your InRhythm Email Address')
+         
       } else {
-         this.setState(state => {
-            state.errors.emailId = null
-            return state
-         })
+         this.clearFieldValidationErrors('emailId')
       }
    }
 
@@ -109,19 +103,15 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.name = "Please enter a your name"
-            return state
-         })
+         this.createValidationError('name', 'Please enter a your name')
+         
       } else {
-         this.setState(state => {
-            state.errors.name = null
-            return state
-         })
+         this.clearFieldValidationErrors('name')
+         
       }
    }
-
-
+   
+   
    handleTitleChange(event) {
       const value = event.target.value
 
@@ -134,15 +124,11 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.title = "Please enter a title"
-            return state
-         })
+         this.createValidationError('title', 'Please enter a title')
+         
       } else {
-         this.setState(state => {
-            state.errors.title = null
-            return state
-         })
+         this.clearFieldValidationErrors('title')
+         
       }
    }
 
@@ -169,15 +155,11 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.biography = "Please enter a biography"
-            return state
-         })
+         this.createValidationError('biography', 'Please enter a biography')
+         
       } else {
-         this.setState(state => {
-            state.errors.biography = null
-            return state
-         })
+         this.clearFieldValidationErrors('biography')
+         
       }
    }
 
@@ -186,15 +168,11 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.department = "Please select a department"
-            return state
-         })
+         this.createValidationError('department', 'Please select a department')
+         
       } else {
-         this.setState(state => {
-            state.errors.department = null
-            return state
-         })
+         this.clearFieldValidationErrors('department')
+         
       }
 
       this.setState(state => {
@@ -216,15 +194,11 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.slack = "Please enter a Slack username"
-            return state
-         })
+         this.createValidationError('slack', 'Please enter a Slack username')
+         
       } else {
-         this.setState(state => {
-            state.errors.slack = null
-            return state
-         })
+         this.clearFieldValidationErrors('slack')
+         
       }
    }
 
@@ -240,15 +214,14 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.linkedin = "Please enter a LinkedIn URL"
-            return state
-         })
+         this.createValidationError('linkedin', 'Please enter a LinkedIn URL')
+         
+      } else if (!value.includes("linkedin.com/")) {
+         this.createValidationError('linkedin', 'Must be a valid LinkedIn URL')
+         
       } else {
-         this.setState(state => {
-            state.errors.linkedin = null
-            return state
-         })
+         this.clearFieldValidationErrors('linkedin')
+         
       }
    }
 
@@ -285,69 +258,81 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
-         this.setState(state => {
-            state.errors.question = "Please enter an answer"
-            return state
-         })
+         this.createValidationError('question', 'Please enter an answer')
+         
       } else {
-         this.setState(state => {
-            state.errors.question = null
-            return state
-         })
+         this.clearFieldValidationErrors('question')
       }
    }
 
-   // canSubmit () {
-
-   //     for(var data in this.state.errors) {
-   //         if(data !== null) {
-   //             return false
-   //         }
-
-   //         return true
-   //     }
-
-   // this.state.errors.forEach((data, index) => {
-   //     if (data) {
-   //         return false;
-   //     }
-   // })
-   // return (
-
-   // )
-   // }
-
-   // check if the data can be submitted -- validating data
-   // canSubmit () {
-   //     const { emailId, name, title, department, socialMedia } = this.state.formData;
-   //     return (
-   //         emailId.length > 13
-   //         && emailId.includes("@inrhythm.com")
-   //         && name.length > 0
-   //         && title.length > 0
-   //         && department !== null
-   //         && socialMedia.linkedin.length > 0
-   //         && socialMedia.linkedin.includes("linkedin.com/")
-   //         && socialMedia.slack.length > 0
-   //     );
-   // }
+   canSubmit () {
+      const { emailId, name, title, department, socialMedia, questions } = this.state.formData;
+      let fieldsRules = (
+           emailId.length > 13
+           && name.length > 0
+           && title.length > 0
+           && department !== null
+           && socialMedia.linkedin.length > 0
+           && socialMedia.slack.length > 0
+           && questions[0].answer.length > 0
+       );
+      
+      if (!this.state.errors.length && fieldsRules) {
+         return true
+      }
+      
+      return false
+   }
 
    handleSubmit(event) {
-      // if(!this.canSubmit()){
       event.preventDefault();
-      // return
-      // }
-      // console.log('Form Submitted')
+      alert('submitted')
    }
 
    handleCancelClick(event) {
       event.preventDefault();
       console.log('Form Cancelled')
    }
+   
+   
+   clearFieldValidationErrors(field) {
+      let errors = [...this.state.errors]
+      
+      errors.forEach((error, index) => {
+         if(error.field === field) {
+            errors.splice(index, 1)
+         }
+      })
+      
+      this.setState({errors: errors})
+   }
+   
+   createValidationError(field, message) {
+      let errors = [...this.state.errors]
+      
+      errors.forEach((error, index) => {
+         if(error.field === field) {
+            errors.splice(index, 1)
+         }
+      })
+      
+      errors.push({field: field, message: message})
+         
+      this.setState({errors: errors})
+   }
+   
+   getValidationError(field) {
+      let err;
+      this.state.errors.forEach((error, index) => {
+         if(error.field === field) {
+            err = error.message 
+         }
+      })
+      return err
+   }
 
    render() {
-      // const isEnabled = this.canSubmit();
-      // console.log(this.canSubmit())
+      const isEnabled = this.canSubmit();
 
       return (
          <div className="edit-form container">
@@ -359,21 +344,21 @@ class PersonEdit extends React.Component {
                         Email:
                         <input type="email" name="email_id" onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} required />
                      </label>
-                     { this.state.errors.emailId ? <span>{this.state.errors.emailId}</span> : '' }
+                     { this.getValidationError('emailId') ? <span>{this.getValidationError('emailId')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Name:
                         <input type="text" name="name" onChange={this.handleNameChange} onBlur={this.handleNameBlur} required/>
                      </label>
-                     { this.state.errors.name ? <span>{this.state.errors.name}</span> : '' }
+                     { this.getValidationError('name') ? <span>{this.getValidationError('name')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Title:
                         <input type="text" name="title" onChange={this.handleTitleChange} onBlur={this.handleTitleBlur} required/>
                      </label>
-                     { this.state.errors.title ? <span>{this.state.errors.title}</span> : '' }
+                     { this.getValidationError('title') ? <span>{this.getValidationError('title')}</span> : '' }
                   </div>
                   <div>
                      <label>
@@ -386,7 +371,7 @@ class PersonEdit extends React.Component {
                         Biography:
                         <textarea name="biography" onChange={this.handleBiographyChange} onBlur={this.handleBiographyBlur} required/>
                      </label>
-                     { this.state.errors.biography ? <span>{this.state.errors.biography}</span> : '' }
+                     { this.getValidationError('biography') ? <span>{this.getValidationError('biography')}</span> : '' }
                   </div>
                   <div>
                      <label>
@@ -398,21 +383,21 @@ class PersonEdit extends React.Component {
                            <option value="sales">Sales</option>
                         </select>
                      </label>
-                     { this.state.errors.department ? <span>{this.state.errors.department}</span> : '' }
+                     { this.getValidationError('department') ? <span>{this.getValidationError('department')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         Slack Username:
                         <input type="text" name="slack" onChange={this.handleSlackChange} onBlur={this.handleSlackBlur} required/>
                      </label>
-                     { this.state.errors.slack ? <span>{this.state.errors.slack}</span> : '' }
+                     { this.getValidationError('slack') ? <span>{this.getValidationError('slack')}</span> : '' }
                   </div>
                   <div>
                      <label>
                         LinkedIn:
                         <input type="text" name="linkedin" onChange={this.handleLinkedinChange} onBlur={this.handleLinkedinBlur} required/>
                      </label>
-                     { this.state.errors.linkedin ? <span>{this.state.errors.linkedin}</span> : '' }
+                     { this.getValidationError('linkedin') ? <span>{this.getValidationError('linkedin')}</span> : '' }
                   </div>
                   <div>
                      <label>
@@ -431,11 +416,11 @@ class PersonEdit extends React.Component {
                         <span>{this.state.formData.questions[0].question}</span>
                         <textarea name="question" onChange={this.handleQuestionChange} onBlur={this.handleQuestionBlur} required></textarea>
                      </label>
-                     { this.state.errors.question ? <span>{this.state.errors.question}</span> : '' }
+                     { this.getValidationError('question') ? <span>{this.getValidationError('question')}</span> : '' }
                   </div>
                   <div>
                      <span onClick={this.handleCancelClick}>Cancel</span>
-                     <input type="submit" value="Submit" />
+                     <input type="submit" value="Submit" disabled={isEnabled  ? false : "disabled"}/>
                   </div>
                </form>
             </div>
