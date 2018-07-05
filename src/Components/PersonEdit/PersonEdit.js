@@ -103,6 +103,7 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
+
          this.createValidationError('name', 'Please enter a your name')
          
       } else {
@@ -127,16 +128,19 @@ class PersonEdit extends React.Component {
          
       } else {
          this.clearFieldValidationErrors('title')
+
       }
    }
 
 
    handleImageChange(event) {
+
       let image = this.image.current.files[0]
       
       if(!image) {
          image = null
       }
+
 
       this.setState(state => {
          state.formData.image = image
@@ -157,10 +161,12 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
+
          this.createValidationError('biography', 'Please enter a biography')
          
       } else {
          this.clearFieldValidationErrors('biography')
+
       }
    }
 
@@ -169,11 +175,13 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
+
          this.createValidationError('department', 'Please select a department')
          
       } else {
          this.clearFieldValidationErrors('department')
          
+
       }
 
       this.setState(state => {
@@ -195,6 +203,7 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
+
          this.createValidationError('slack', 'Please enter a Slack username')
          
       } else {
@@ -215,6 +224,7 @@ class PersonEdit extends React.Component {
       const value = event.target.value
 
       if(!value.length) {
+
          this.createValidationError('linkedin', 'Please enter a LinkedIn URL')
          
       } else if (!value.includes("linkedin.com/")) {
@@ -343,6 +353,7 @@ class PersonEdit extends React.Component {
                   <div>
                      <label>
                         Email:
+
                         <input type="email" name="email_id" className={(this.getValidationError('emailId') ? 'error' : '')} onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} required />
                      </label>
                      { this.getValidationError('emailId') ? <span>{this.getValidationError('emailId')}</span> : '' }
@@ -378,6 +389,7 @@ class PersonEdit extends React.Component {
                      <label>
                         Department:
                         <select name="department" className={(this.getValidationError('department') ? 'error' : '')} onChange={this.handleDepartmentChange} required>
+
                            <option value="">Select Department</option>
                            <option value="engineering">Engineering</option>
                            <option value="operations">Operations</option>
@@ -385,6 +397,7 @@ class PersonEdit extends React.Component {
                         </select>
                      </label>
                      { this.getValidationError('department') ? <span>{this.getValidationError('department')}</span> : '' }
+
                   </div>
                   <div>
                      <label>
@@ -420,8 +433,8 @@ class PersonEdit extends React.Component {
                      { this.getValidationError('question') ? <span>{this.getValidationError('question')}</span> : '' }
                   </div>
                   <div>
-                     <span onClick={this.handleCancelClick}>Cancel</span>
-                     <input type="submit" value="Submit" disabled={isEnabled  ? false : "disabled"}/>
+                     <span className="button orange-button button-cancel" onClick={this.handleCancelClick}>Cancel</span>
+                     <input className="button orange-button button-submit" type="submit" value="Submit" disabled={isEnabled  ? false : "disabled"}/>
                   </div>
                </form>
             </div>
