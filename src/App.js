@@ -1,13 +1,13 @@
 import React from 'react';
+import Routes from './Routes';
 import './styles/main.scss';
-import PersonEdit from './Components/PersonEdit/PersonEdit';
 
 class App extends React.Component {
 
    render() {
       return (
          <div className="app">
-            <PersonEdit />
+            <Routes />
          </div>
       );
    }
