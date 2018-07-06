@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import MasonryGallery from "./masonry_component.js";
 import FilterDropdown from "./filter_dropdown_component.js";
 
-class FilterPage extends Component {
+class People extends Component {
 	constructor() {
 		super();
 		this.state = { filterBy: "all" };
@@ -110,4 +110,4 @@ class FilterPage extends Component {
 	}
 }
 
-export default FilterPage;
+export default People;
