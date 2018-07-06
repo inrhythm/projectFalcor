@@ -38,6 +38,8 @@ body { overflow: hidden; }
 
 .person-container {
   margin-bottom: 2rem;
+  // padding-left: .5rem;
+  // padding-right: .5rem;
 }
 
 .image-container{
@@ -47,7 +49,7 @@ body { overflow: hidden; }
 .image-element-class {
   // width: 25rem;
   // height: 25rem;
-  // width: 100%;
+  width: 100%;
   transition: opacity 0.7s;
 }
 
@@ -62,11 +64,11 @@ body { overflow: hidden; }
 
 }
 
-.image-container.brought-to-front{
+.person-container.brought-to-front{
   order: 0;
 }
 
-.image-container.sent-to-rear{
+.person-container.sent-to-rear{
   order: 1;
 }
 
