@@ -22,7 +22,8 @@ body { overflow: hidden; }
    &-content {
       flex: 1 1 auto;
       position: relative;
-      overflow-y: auto;
+      overflow: auto;
+
    }
 }
 
@@ -87,11 +88,11 @@ body { overflow: hidden; }
   // opacity: 1;
 }
 
-.people-grid {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
+// .people-grid {
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
+// }
 
 .person {
   font-size: 1.5rem;

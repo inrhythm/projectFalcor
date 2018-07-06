@@ -105,7 +105,7 @@ class People extends Component {
 			<div>
 				<div className="page-title-div">Our People</div>
 				<FilterDropdown setFilter={this.setFilter} />
-				<MasonryGallery people={filteredPeople} />
+            <MasonryGallery people={people}/>
 			</div>
 		);
 	}
