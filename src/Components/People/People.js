@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
 import MasonryGallery from "./masonry_component.js";
 import FilterDropdown from "./filter_dropdown_component.js";
+import './People.scss';
 
 class People extends Component {
 	constructor() {

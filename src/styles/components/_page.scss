@@ -1,0 +1,17 @@
+.page {
+   &-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+   }
+
+   &-header {
+      flex: 0 0 auto;
+   }
+
+   &-content {
+      flex: 1 1 auto;
+      position: relative;
+      overflow-y: auto;
+   }
+}

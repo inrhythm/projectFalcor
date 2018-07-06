@@ -1,0 +1,21 @@
+// if we need components they can now go here
+
+$box-color:#d6d0d0;
+$box-background: #f7f7f7;
+
+.login {
+   border: 1px solid $box-color;
+   border-radius: 5px;
+   background: $box-background;
+   padding: 25px 0;
+
+   &__header {
+      padding: 10px 0 22px 0;
+      font-size: 28px;
+      text-align: center;
+   }
+
+   &__buttons {
+      text-align: center;
+   }
+}
