@@ -22,7 +22,7 @@ const getPerson = (id) => {
 }
 
 const getAdminList = (id) => {
-	return jsonData.people.filter(function (a) { return a.is_active === true; });
+	return jsonData.people.filter(function (a) { return a.is_active === false; });
 }
 
 const addPerson = (person) => {
