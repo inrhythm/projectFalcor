@@ -5,6 +5,7 @@ import Header from './Components/header.js';
 import PeoplePage from './Components/people_page.js'
 
 
+
 class App extends Component {
 
    /*render() {

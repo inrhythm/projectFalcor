@@ -42,6 +42,7 @@ body { overflow: hidden; }
   margin-bottom: 2rem;
   padding-left: .5rem;
   padding-right: .5rem;
+  // max-width: 10%;
 }
 
 .image-container{
@@ -49,15 +50,12 @@ body { overflow: hidden; }
 }
 
 .image-element-class {
-  // width: 25rem;
-  // height: 25rem;
   width: 100%;
   transition: opacity 0.7s;
 }
 
 .main-img{
   position: absolute;
-   // z-index: 1;
 }
 
 .main-img:hover {
@@ -79,13 +77,9 @@ body { overflow: hidden; }
 .hover-img {
   opacity: .0;
   filter: sepia();
-  // margin-left: -25rem;
-  // z-index: 0;
 }
 .not-greyed-out.hover-img:hover {
   opacity: .4;
-   // z-index: 1;
-  // opacity: 1;
 }
 
 
@@ -128,4 +122,12 @@ body { overflow: hidden; }
    background-color: lightgrey;
    font-size: 2rem;
    padding: 3rem;
+}
+
+
+// This can probably be done with the other column stuff, but this was easier short term
+@media (max-width: 415px) {
+   .person-container {
+      max-width: 45%;
+   }
 }
