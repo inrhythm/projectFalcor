@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Image from './image-component.js';
+import Image from './ImageComponent.js';
 
 class Gallery extends React.Component {
 	render() {

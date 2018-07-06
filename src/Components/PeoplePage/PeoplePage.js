@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import MasonryGallery from "./masonry_component.js";
-import FilterDropdown from "./filter_dropdown_component.js";
+import MasonryGallery from "./MasonryComponent.js";
+import FilterDropdown from "./FilterDropdownComponent.js";
 
 class FilterPage extends Component {
 	constructor() {
