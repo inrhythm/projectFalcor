@@ -1,14 +1,17 @@
 import React from 'react';
 import './styles/main.scss';
-import PersonEdit from './Components/PersonEdit/PersonEdit';
+import { Link } from 'react-router-dom';
+import Router from './router';
+import Header from './Components/header.js';
 
 class App extends React.Component {
 
    render() {
       return (
-         <div className="app">
-            <PersonEdit />
-         </div>
+        <div>
+          <Header />
+          <Router />
+        </div>
       );
    }
 }
