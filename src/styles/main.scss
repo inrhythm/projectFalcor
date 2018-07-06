@@ -40,8 +40,8 @@ body { overflow: hidden; }
 
 .person-container {
   margin-bottom: 2rem;
-  // padding-left: .5rem;
-  // padding-right: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .image-container{
@@ -88,11 +88,14 @@ body { overflow: hidden; }
   // opacity: 1;
 }
 
-// .people-grid {
-//   display: flex;
-//   justify-content: space-evenly;
-//   flex-wrap: wrap;
-// }
+
+.people-grid {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: center;
+}
 
 .person {
   font-size: 1.5rem;
