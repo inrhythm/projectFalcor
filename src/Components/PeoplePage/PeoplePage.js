@@ -12,7 +12,7 @@ class FilterPage extends Component {
 	}
 
 	setFilter = filterBy => {
-		this.setState({ filterBy }); 
+		this.setState({ filterBy });
 	};
 
 	render() {
