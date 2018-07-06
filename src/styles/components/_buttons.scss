@@ -12,9 +12,25 @@
   display: inline-block;
   vertical-align: middle;
   border: 1px solid;
+  border-radius: 3px;
 
   &:hover {
     transition: .3s all ease;
+  }
+}
+
+.button-submit {
+  margin: 0;
+}
+
+.button-cancel {
+  border-color: $color-red;
+  color: $color-white;
+  background: $color-grey;
+
+  &:hover {
+    color: $color-white;
+    background: $color-red;
   }
 }
 
