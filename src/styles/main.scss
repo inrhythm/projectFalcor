@@ -12,6 +12,7 @@ body { overflow: hidden; }
    &-wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
    }
 
    &-header {
@@ -21,7 +22,8 @@ body { overflow: hidden; }
    &-content {
       flex: 1 1 auto;
       position: relative;
-      overflow-y: auto;
+      overflow: auto;
+
    }
 }
 
@@ -59,7 +61,7 @@ body { overflow: hidden; }
 }
 
 .main-img:hover {
-  opacity: 0; 
+  opacity: 0;
   // z-index: 0;
 
 }
@@ -96,11 +98,12 @@ body { overflow: hidden; }
   align-content: center;
 }
 
+
 .person {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: black; 
+  color: black;
   text-align: center;
 }
 
