@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/main.scss';
 // import PersonEdit from './Components/PersonEdit/PersonEdit';
-import PeoplePage from './Components/people_page.js'
+import PeoplePage from './components/people_page.js'
 
 class App extends React.Component {
 

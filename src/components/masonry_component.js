@@ -5,7 +5,7 @@ import Image from './image-component.js';
 class Gallery extends React.Component {
 	render() {
 		const childElements = this.props.people.map(person => (
-			<div className={"person-container "+ (!person.greyedOut ? "brought-to-front" : "sent-to-rear")+" col-sm-6 col-lg-3"}>
+			 <div className={"person-container "+ (!person.greyedOut ? "brought-to-front" : "sent-to-rear")+"col-md-4 col-lg-3"}>
 				<a className="person" href="#">
 					<div className="image-container">
 						<Image className={"main-img image-element-class " + (person.greyedOut ? " greyed-out" : "not-greyed-out")} src={person.image1} />
@@ -17,7 +17,7 @@ class Gallery extends React.Component {
 		));
 
 		return (
-			<div className="people-grid container"> {childElements} </div>
+			<div className="people-grid"> {childElements} </div>
 		);
 	}
 }

@@ -26,7 +26,7 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
@@ -34,8 +34,8 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
-				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
@@ -50,7 +50,7 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
@@ -58,8 +58,8 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
-				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
@@ -74,7 +74,7 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?auto=compress&cs=tinysrgb&h=350",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo1",
 				job_title: "bar1",
@@ -82,8 +82,8 @@ class FilterPage extends Component {
 			},
 			{
 				image1:
-					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?itok=ocw3xkx_",
-				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350?quality=10",
+					"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
+				image2: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350",
 				name: "foo2",
 				job_title: "bar2",
 				department: "sales"
@@ -102,7 +102,7 @@ class FilterPage extends Component {
 				  });
 
 		return (
-			<div>
+			<div className="people-page-div">
 				<div className="page-title-div">Our People</div>
 				<FilterDropdown setFilter={this.setFilter} />
             <MasonryGallery people={people}/>
