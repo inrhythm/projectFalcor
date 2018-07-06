@@ -12,6 +12,7 @@ body { overflow: hidden; }
    &-wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
    }
 
    &-header {
@@ -47,7 +48,7 @@ body { overflow: hidden; }
 }
 
 .main-img:hover {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .image-container.brought-to-front{
@@ -80,7 +81,7 @@ body { overflow: hidden; }
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: black; 
+  color: black;
   text-align: center;
 }
 
