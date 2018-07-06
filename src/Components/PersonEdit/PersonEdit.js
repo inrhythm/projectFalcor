@@ -1,468 +1,310 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './PersonEdit.scss';
 
-class PersonEdit extends React.Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         formData: {
-            emailId: '',
-            name: '',
-            title: '',
-            image: null,
-            biography: '',
-            department: null,
-            socialMedia: {
-               slack: '',
-               linkedin: '',
-               github: '',
-               website: ''
-            },
-            questions: [
-               {
-                  question: "Tell us something no one knows about you",
-                  answer: ''
-               }
-            ],
-            isActive: true,
-            isValid: false
-         },
-
-         errors: []
-      };
-
-      this.handleEmailChange = this.handleEmailChange.bind(this);
-      this.handleEmailBlur = this.handleEmailBlur.bind(this);
-
-      this.handleNameChange = this.handleNameChange.bind(this);
-      this.handleNameBlur = this.handleNameBlur.bind(this);
-
-      this.handleTitleChange = this.handleTitleChange.bind(this);
-      this.handleTitleBlur = this.handleTitleBlur.bind(this);
-
-      this.handleImageChange = this.handleImageChange.bind(this);
-
-      this.handleBiographyChange = this.handleBiographyChange.bind(this);
-      this.handleBiographyBlur = this.handleBiographyBlur.bind(this);
-
-      this.handleDepartmentChange = this.handleDepartmentChange.bind(this);
-
-      this.handleSlackChange = this.handleSlackChange.bind(this);
-      this.handleSlackBlur = this.handleSlackBlur.bind(this);
-
-      this.handleLinkedinChange = this.handleLinkedinChange.bind(this);
-      this.handleLinkedinBlur = this.handleLinkedinBlur.bind(this);
-
-      this.handleGithubChange = this.handleGithubChange.bind(this);
-
-      this.handleWebsiteChange = this.handleWebsiteChange.bind(this);
-
-      this.handleQuestionChange = this.handleQuestionChange.bind(this);
-      this.handleQuestionBlur = this.handleQuestionBlur.bind(this);
-
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.handleCancelClick = this.handleCancelClick.bind(this);
-      this.image = React.createRef();
-   }
-
-   handleEmailChange(event) {
-
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.emailId = value
-         return state
-      })
-   }
-   
-   handleEmailBlur(event) {
-      const value = event.target.value
-      
-      if(!value.length) {
-         this.createValidationError('emailId', 'Please enter a valid InRhythm Email')
-         
-      } else if(!value.includes('@inrhythm.com')) {
-         this.createValidationError('emailId', 'Must be your InRhythm Email Address')
-         
-      } else {
-         this.clearFieldValidationErrors('emailId')
-      }
-   }
-
-
-   handleNameChange(event) {
-
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.name = value
-         return state
-      })
-   }
-   handleNameBlur(event) {
-      const value = event.target.value
-
-      if(!value.length) {
+class PersonEdit extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            formData: {
+                emailId: '',
+                name: '',
+                title: '',
+                image: null,
+                biography: '',
+                department: null,
+                socialMedia: {
+                    slack: '',
+                    linkedin: '',
+                    github: '',
+                    website: ''
+                },
+                questions: [
+                    {
+                        question: "Tell us something no one knows about you",
+                        answer: ''
+                    }
+                ],
+                isActive: true,
+                isValid: false
+            }
+        };
+
+        this.handleEmailBlur = this.handleEmailBlur.bind(this);
+
+        this.handleNameBlur = this.handleNameBlur.bind(this);
+
+        this.handleTitleBlur = this.handleTitleBlur.bind(this);
+
+        this.image = React.createRef();
+
+        this.handleBiographyBlur = this.handleBiographyBlur.bind(this);
+
+        this.handleDepartmentChange = this.handleDepartmentChange.bind(this);
+
+        this.handleSlackBlur = this.handleSlackBlur.bind(this);
+
+        this.handleLinkedinBlur = this.handleLinkedinBlur.bind(this);
+
+        this.handleQuestionBlur = this.handleQuestionBlur.bind(this);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancelClick = this.handleCancelClick.bind(this);
+    }
+
+    handleEmailBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please enter a valid InRhythm Email")
 
-         this.createValidationError('name', 'Please enter a your name')
-         
-      } else {
-         this.clearFieldValidationErrors('name')
-      }
-   }
-   
-   
-   handleTitleChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.title = value
-         return state
-      })
-   }
-   handleTitleBlur(event) {
-      const value = event.target.value
-
-      if(!value.length) {
-         this.createValidationError('title', 'Please enter a title')
-         
-      } else {
-         this.clearFieldValidationErrors('title')
-
-      }
-   }
-
-
-   handleImageChange(event) {
-
-      let image = this.image.current.files[0]
-      
-      if(!image) {
-         image = null
-      }
-
-
-      this.setState(state => {
-         state.formData.image = image
-         return state
-      })
-   }
-
-
-   handleBiographyChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.biography = value
-         return state
-      })
-   }
-   handleBiographyBlur(event) {
-      const value = event.target.value
+        } else if (!value.includes('@inrhythm.com')) {
+            el.setCustomValidity("This must be your InRhythm Email Address")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
 
-      if(!value.length) {
+    handleNameBlur(event) {
+        const value = event.target.value
+        const el = event.target
 
-         this.createValidationError('biography', 'Please enter a biography')
-         
-      } else {
-         this.clearFieldValidationErrors('biography')
-
-      }
-   }
-
-
-   handleDepartmentChange(event) {
-      const value = event.target.value
-
-      if(!value.length) {
-
-         this.createValidationError('department', 'Please select a department')
-         
-      } else {
-         this.clearFieldValidationErrors('department')
-         
-
-      }
-
-      this.setState(state => {
-         state.formData.department = value
-         return state
-      })
-   }
-
-
-   handleSlackChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.socialMedia.slack = value
-         return state
-      })
-   }
-   handleSlackBlur(event) {
-      const value = event.target.value
-
-      if(!value.length) {
-
-         this.createValidationError('slack', 'Please enter a Slack username')
-         
-      } else {
-         this.clearFieldValidationErrors('slack')
-         
-      }
-   }
-
-   handleLinkedinChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.socialMedia.linkedin = value
-         return state
-      })
-   }
-   handleLinkedinBlur(event) {
-      const value = event.target.value
-
-      if(!value.length) {
-
-         this.createValidationError('linkedin', 'Please enter a LinkedIn URL')
-         
-      } else if (!value.includes("linkedin.com/")) {
-         this.createValidationError('linkedin', 'Must be a valid LinkedIn URL')
-         
-      } else {
-         this.clearFieldValidationErrors('linkedin')
-      }
-   }
-
-
-   handleGithubChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.socialMedia.github = value
-         return state
-      })
-   }
-
-
-   handleWebsiteChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.socialMedia.website = value
-         return state
-      })
-   }
-
-
-   handleQuestionChange(event) {
-      const value = event.target.value
-
-      this.setState(state => {
-         state.formData.questions[0].answer = value
-         return state
-      })
-   }
-   handleQuestionBlur(event) {
-      const value = event.target.value
-
-      if(!value.length) {
-         this.createValidationError('question', 'Please enter an answer')
-         
-      } else {
-         this.clearFieldValidationErrors('question')
-      }
-   }
-
-   canSubmit () {
-      const { emailId, name, image, title, department, socialMedia, questions } = this.state.formData;
-      let fieldsRules = (
-           emailId.length > 13
-           && name.length > 0
-           && title.length > 0
-           && department !== null
-           && image !== null
-           && socialMedia.linkedin.length > 0
-           && socialMedia.slack.length > 0
-           && questions[0].answer.length > 0
-       );
-      
-      if (!this.state.errors.length && fieldsRules) {
-         return true
-      }
-      
-      return false
-   }
-
-   handleSubmit(event) {
-      event.preventDefault()
-      alert('submitted')
-   }
-
-   handleCancelClick(event) {
-      event.preventDefault()
-      console.log('Form Cancelled')
-   }
-   
-   
-   clearFieldValidationErrors(field) {
-      let errors = [...this.state.errors]
-      
-      errors.forEach((error, index) => {
-         if(error.field === field) {
-            errors.splice(index, 1)
-         }
-      })
-      
-      this.setState({errors})
-   }
-   
-   createValidationError(field, message) {
-      let errors = [...this.state.errors]
-      
-      errors.forEach((error, index) => {
-         if(error.field === field) {
-            errors.splice(index, 1)
-         }
-      })
-      
-      errors.push({field: field, message: message})
-         
-      this.setState({errors})
-   }
-   
-   getValidationError(field) {
-      let err;
-      this.state.errors.forEach((error, index) => {
-         if(error.field === field) {
-            err = error.message
-         }
-      })
-      return err
-   }
-
-   render() {
-      const isEnabled = this.canSubmit()
-
-      return (
-         <div className="edit-form container">
-            <div className="col-12 col-sm-10 push-sm-1 col-md-8 push-md-2">
-
-                <form className="vr--form">
-                    <div>
-                        <label>Name: </label>
-                        <input type="text" name="vr--name" required />
-                    </div>
-
-                    <div>
-                      <label>Email: </label>
-                      <input type="email" name="vr--emai_id" required />
-                    </div>
-
-                    <div>
-                      <label>Title: </label>
-                      <input type="text" name="vr--title" required />
-                    </div>
-                </form>
-
-<hr />
-
-
-
-               <form onSubmit={this.handleSubmit}>
-                  <img src={this.state.image} alt="" />
-                  <div>
-                     <label>
-                        Email:
-
-                        <input type="email" name="email_id" className={(this.getValidationError('emailId') ? 'error' : '')} onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} required />
-                     </label>
-                     { this.getValidationError('emailId') ? <span>{this.getValidationError('emailId')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        Name:
-                        <input type="text" name="name" className={(this.getValidationError('name') ? 'error' : '')} onChange={this.handleNameChange} onBlur={this.handleNameBlur} required/>
-                     </label>
-                     { this.getValidationError('name') ? <span>{this.getValidationError('name')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        Title:
-                        <input type="text" name="title" className={(this.getValidationError('title') ? 'error' : '')} onChange={this.handleTitleChange} onBlur={this.handleTitleBlur} required/>
-                     </label>
-                     { this.getValidationError('title') ? <span>{this.getValidationError('title')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        Upload Image:
-                        <input type="file" name="image" onChange={this.handleImageChange} ref={this.image} required/>
-                     </label>
-                  </div>
-                  <div>
-                     <label>
-                        Biography:
-                        <textarea name="biography" className={(this.getValidationError('biography') ? 'error' : '')} onChange={this.handleBiographyChange} onBlur={this.handleBiographyBlur} required/>
-                     </label>
-                     { this.getValidationError('biography') ? <span>{this.getValidationError('biography')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        Department:
-                        <select name="department" className={(this.getValidationError('department') ? 'error' : '')} onChange={this.handleDepartmentChange} required>
-
-                           <option value="">Select Department</option>
-                           <option value="engineering">Engineering</option>
-                           <option value="operations">Operations</option>
-                           <option value="sales">Sales</option>
-                        </select>
-                     </label>
-                     { this.getValidationError('department') ? <span>{this.getValidationError('department')}</span> : '' }
-
-                  </div>
-                  <div>
-                     <label>
-                        Slack Username:
-                        <input type="text" name="slack" className={(this.getValidationError('slack') ? 'error' : '')} onChange={this.handleSlackChange} onBlur={this.handleSlackBlur} required/>
-                     </label>
-                     { this.getValidationError('slack') ? <span>{this.getValidationError('slack')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        LinkedIn:
-                        <input type="text" name="linkedin" className={(this.getValidationError('linkedin') ? 'error' : '')} onChange={this.handleLinkedinChange} onBlur={this.handleLinkedinBlur} required/>
-                     </label>
-                     { this.getValidationError('linkedin') ? <span>{this.getValidationError('linkedin')}</span> : '' }
-                  </div>
-                  <div>
-                     <label>
-                        GitHub Username:
-                        <input type="text" name="github" className={(this.getValidationError('github') ? 'error' : '')} onChange={this.handleGithubChange}/>
-                     </label>
-                  </div>
-                  <div>
-                     <label>
-                        Website:
-                        <input type="text" name="website" onChange={this.handleWebsiteChange}/>
-                     </label>
-                  </div>
-                  <div>
-                     <label>
-                        <span>{this.state.formData.questions[0].question}</span>
-                        <textarea name="question" className={(this.getValidationError('question') ? 'error' : '')} onChange={this.handleQuestionChange} onBlur={this.handleQuestionBlur} required></textarea>
-                     </label>
-                     { this.getValidationError('question') ? <span>{this.getValidationError('question')}</span> : '' }
-                  </div>
-                      <div className="update-form--container">
-                     <span className="button orange-button button-cancel" onClick={this.handleCancelClick}>Cancel</span>
-                     <input className="button orange-button button-submit" type="submit" value="Submit" disabled={isEnabled  ? false : "disabled"}/>
-                  </div>
-               </form>
+        if (!value.length) {
+            el.setCustomValidity("Please enter your name")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleTitleBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please enter your title")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleBiographyBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please enter a biography")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleDepartmentChange(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please select your department")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleSlackBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please enter your Slack username")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleLinkedinBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please enter your LinkedIn URL")
+
+
+        } else if (!value.includes("linkedin.com/")) {
+            el.setCustomValidity("Must be a valid LinkedIn URL")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleQuestionBlur(event) {
+        const value = event.target.value
+        const el = event.target
+
+        if (!value.length) {
+            el.setCustomValidity("Please answer the question")
+
+        } else {
+            el.setCustomValidity("")
+        }
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+
+        if (!event.target.checkValidity()) {
+            console.log('form not valid')
+        }
+
+        console.log('form is valid')
+    }
+
+    handleCancelClick(event) {
+        event.preventDefault()
+
+        console.log('Form Cancelled')
+    }
+
+    render() {
+        // const isEnabled = this.canSubmit()
+        let uploadedPreview = '';
+
+        return (
+            <div className="edit-form container">
+                {/* <div className="col-12 col-sm-10 push-sm-1 col-md-8 push-md-2"> */}
+                <div>
+                    <div className="edit-form--header"><h2>Add Your Page</h2></div>
+
+                    <form onSubmit={this.handleSubmit}
+                        className="vr--form"
+                        ref={form => this.form = form}>
+
+
+                        <div className="edit-form--elem edit-form--upload">
+                            <div className="form-image--preview"
+                                style={
+                                    {
+                                        // the preview for the uploaded image should come here
+                                        backgroundImage: `url(${uploadedPreview})`
+                                        // backgroundImage: 'url(https://st2.depositphotos.com/1637787/11518/i/950/depositphotos_115186378-stock-photo-developer-working-on-laptop.jpg)'
+                                    }
+                                }
+
+                            ></div>
+                            <div className="form--upload__btn">
+                                <label className="upload-photo--btn button blue-button" htmlFor="upload-photo">Upload Photo</label>
+                                <input id="upload-photo" type="file" />
+                            </div>
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Your Full Name</h3></label>
+                            <span>What do you want your colleagues and clients to call you?</span>
+                            <input type="text"
+                                className="form--question_input"
+                                required
+                                id="name-field"
+                                name="name"
+                                onBlur={this.handleNameBlur}
+                                pattern="([A-Z][a-zA-Z ]*)" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Your IR Email Address</h3></label>
+                            <span>Don't worry, we won't spam you because you work here :)</span>
+                            <input type="email"
+                                className="form--question_input"
+                                id="email-field"
+                                name="email_id"
+                                onBlur={this.handleEmailBlur}
+                                pattern="([a-zA-Z]*@inrhythm\.com)"
+                                required />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Your Title</h3></label>
+                            <input type="text"
+                                id="title-field"
+                                name="title"
+                                onBlur={this.handleTitleBlur}
+                                required
+                                pattern="([a-zA-Z ]*)" />
+                        </div>
+
+                        {/* <div className="edit-form--elem form--question">
+                    <label><h3>Tagline</h3></label>
+                    <span>A short one-liner about you.</span>
+                    <input 
+                      className="form--question_input" 
+                      type="text" 
+                      name="tagline" required />
+                  </div> */}
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Department</h3></label>
+                            <select id="department-field"
+                                name="department"
+                                onChange={this.handleDepartmentChange}
+                                required >
+                                <option value="">Choose your department</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="operations">Operations</option>
+                                <option value="sales">Sales</option>
+                            </select>
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Slack Username</h3></label>
+                            <input id="slack-field" type="text" name="slack" onBlur={this.handleSlackBlur} required pattern="([a-zA-Z ]*)" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>LinkedIn</h3></label>
+                            <input id="linkedin-field" type="text" name="linkedin" onBlur={this.handleLinkedinBlur} required pattern="linkedin.com/([-a-zA-Z0-9@:%_\+.~#?&//=]*)" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>GitHub</h3></label>
+                            <input id="github-field" type="text" name="github" pattern="^[a-zA-Z0-9]+[a-zA-Z0-9\-]*[a-zA-Z0-9]+$" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Website</h3></label>
+                            <input type="text" name="website" pattern="([A-Za-z]*)\.([A-Za-z\.]*)" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Biography</h3></label>
+                            <span>Super quick bio. Where you went to school, what are you going to work on here, etc</span>
+                            <textarea
+                                className="form--question_input" />
+                        </div>
+
+                        <div className="edit-form--elem form--question">
+                            <label><h3>Fun Questions</h3></label>
+                            <span>{this.state.formData.questions[0].question}</span>
+                            <textarea
+                                className="form--question_input"
+                                name="question" onBlur={this.handleQuestionBlur} required
+                            />
+                        </div>
+
+
+                        <div className="update-form--container">
+                            <input className="button orange-button button-submit" type="submit" value="Submit" />
+                            <span className="button button-cancel" onClick={this.handleCancelClick}>Cancel</span>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-         </div>
-      )
-   }
+        )
+    }
 }
 
 export default PersonEdit;
