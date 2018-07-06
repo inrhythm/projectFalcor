@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React,{ Component } from 'react';
 import './styles/main.scss';
-import PersonEdit1 from './Components/PersonEdit/PersonEdit.1';
+import Router from './router';
+import Header from './Components/header.js';
 
 class App extends Component {
 
    render() {
       return (
-         <div className="app">
-            <PersonEdit1 />
-         </div>
+        <div>
+          <Header />
+          <Router />
+        </div>
       );
    }
 }
