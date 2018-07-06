@@ -348,6 +348,28 @@ class PersonEdit extends React.Component {
       return (
          <div className="edit-form container">
             <div className="col-12 col-sm-10 push-sm-1 col-md-8 push-md-2">
+
+                <form className="vr--form">
+                    <div>
+                        <label>Name: </label>
+                        <input type="text" name="vr--name" required />
+                    </div>
+
+                    <div>
+                      <label>Email: </label>
+                      <input type="email" name="vr--emai_id" required />
+                    </div>
+
+                    <div>
+                      <label>Title: </label>
+                      <input type="text" name="vr--title" required />
+                    </div>
+                </form>
+
+<hr />
+
+
+
                <form onSubmit={this.handleSubmit}>
                   <img src={this.state.image} alt="" />
                   <div>
@@ -432,7 +454,7 @@ class PersonEdit extends React.Component {
                      </label>
                      { this.getValidationError('question') ? <span>{this.getValidationError('question')}</span> : '' }
                   </div>
-                  <div>
+                      <div className="update-form--container">
                      <span className="button orange-button button-cancel" onClick={this.handleCancelClick}>Cancel</span>
                      <input className="button orange-button button-submit" type="submit" value="Submit" disabled={isEnabled  ? false : "disabled"}/>
                   </div>

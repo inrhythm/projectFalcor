@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles/main.scss';
-import PersonEdit from './Components/PersonEdit/PersonEdit';
+import PersonEdit1 from './Components/PersonEdit/PersonEdit.1';
 
-class App extends React.Component {
+class App extends Component {
 
    render() {
       return (
          <div className="app">
-            <PersonEdit />
+            <PersonEdit1 />
          </div>
       );
    }

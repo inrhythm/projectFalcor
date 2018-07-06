@@ -11,6 +11,7 @@
   height: 40px;
   display: inline-block;
   vertical-align: middle;
+  border: 1px solid;
 
   &:hover {
     transition: .3s all ease;
@@ -20,10 +21,21 @@
 .orange-button {
   background: $color-orange;
   color: $color-white;
-  border: 1px solid $color-orange;
+  border-color: $color-orange;
   
   &:hover {
     background: $color-white;
     color: $color-orange;
+  }
+}
+
+.blue-button {
+  background: $color-blue;
+  color: $color-white;
+  border-color: $color-blue;
+  
+  &:hover {
+    background: $color-white;
+    color: $color-blue;
   }
 }
