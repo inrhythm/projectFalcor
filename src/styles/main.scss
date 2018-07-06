@@ -38,8 +38,8 @@ body { overflow: hidden; }
 
 .person-container {
   margin-bottom: 2rem;
-  // padding-left: .5rem;
-  // padding-right: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .image-container{
@@ -92,6 +92,8 @@ body { overflow: hidden; }
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: stretch;
+  align-content: center;
 }
 
 .person {
