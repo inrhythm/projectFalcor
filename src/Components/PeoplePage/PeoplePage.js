@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import MasonryGallery from "./MasonryComponent.js";
 import FilterDropdown from "./FilterDropdownComponent.js";
 
+import "./PeoplePage.scss"
+
 class FilterPage extends Component {
 	constructor() {
 		super();
