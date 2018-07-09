@@ -1,11 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import People from './Components/People/People'
+import PeoplePage from './Components/PeoplePage/PeoplePage'
 import PersonEdit from './Components/PersonEdit/PersonEdit'
 
 const Router = () => (
 	<Switch>
-	  <Route exact path='/' component={People}/>
+	  <Route exact path='/' component={PeoplePage}/>
 	  <Route path='/register' component={PersonEdit}/>
 	</Switch>
 )
