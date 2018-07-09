@@ -12,7 +12,7 @@ class PeoplePage extends Component {
 	}
 
 	setFilter(filterBy){
-
+	   //Here we are just disabling the hover we are not filtering the data.
       const filteredPeople = filterBy === "all"
          ? this.state.people.map(person => {
             person.greyedOut = false;
