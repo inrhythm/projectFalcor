@@ -26,7 +26,7 @@ class PeoplePage extends Component {
 		this.setState({people: filteredPeople});
 	};
 
-	componentWillMount(){
+	componentDidMount(){
 
       // Pretend this is from an ajax request or something to get people
       const people = [
