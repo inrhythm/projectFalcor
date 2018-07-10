@@ -15,6 +15,7 @@
    &-wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
    }
 
    &-header {
@@ -24,72 +25,8 @@
    &-content {
       flex: 1 1 auto;
       position: relative;
-      overflow-y: auto;
+      overflow: auto;
+
    }
 }
 
-// People Page stuff
-
-/* .App {
-    text-align: center;
-
-    &-header {
-        color: orangered;
-    }
-}
- */
-
-.image-container {
-  margin-bottom: 2rem;
-}
-
-.image-element-class {
-  width: 25rem;
-  height: 45rem;
-  transition: opacity 0.7s;
-}
-
-.main-img:hover {
-  opacity: 0; 
-}
-
-.image-container.brought-to-front{
-  order: 0;
-}
-
-.image-container.sent-to-rear{
-  order: 1;
-}
-
-.greyed-out {
-  opacity: .4;
-}
-
-.hover-img {
-  opacity: .0;
-  margin-left: -25rem;
-}
-.not-greyed-out.hover-img:hover {
-  opacity: 1;
-}
-
-.people-grid {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.person {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: black; 
-  text-align: center;
-}
-
-
-.filter-dropdown {
-   display: block;
-   margin-right: auto;
-   margin-left: auto;
-}

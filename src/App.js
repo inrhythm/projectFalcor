@@ -3,14 +3,16 @@ import './styles/main.scss';
 import Router from './router';
 import Header from './Components/header.js';
 
-class App extends Component {
 
-   render() {
+class App extends Component {
+render() {
       return (
-        <div>
-          <Header />
-          <Router />
-        </div>
+         <div>
+            <div>
+               <Header />
+               <Router />
+            </div>
+         </div>
       );
    }
 }

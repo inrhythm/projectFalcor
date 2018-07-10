@@ -66,3 +66,4 @@ typings/
 
 public/css/*
 build
+.vscode
