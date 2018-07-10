@@ -1,0 +1,38 @@
+.upload-photo--btn {
+   width: auto;
+   cursor: pointer;
+   text-align: center;
+   max-width: 200px;
+   position: relative;
+   z-index: 2;
+}
+
+#upload-photo {
+   opacity: 0;
+   visibility: hidden;
+   position: absolute;
+   z-index: -1;
+   height: 50px;
+}
+
+.edit-form--upload {
+  position: relative;
+  min-height: 250px;
+  width: 100%;
+  background: #ddd;
+  display: flex;
+  align-content: center;
+  justify-content: center; 
+}
+
+.form-image--preview {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+}

@@ -1,5 +1,47 @@
+@import '../../styles/settings';
 // if we need components they can now go here
 
 .person-edit {
    border: 1px solid red;
+}
+
+.edit-form--header {
+  min-height: 100px;
+  padding: 20px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.edit-form {
+  form {
+    padding-top: 20px;
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+  }
+
+    select {
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+}
+
+.edit-form--elem {
+  padding: 10px 0;
+  label {
+    display: block;
+  }
+  
+  span {
+    margin: 5px 0;
+  }
+}
+
+.update-form--container {
+  background: $color-grey;
 }

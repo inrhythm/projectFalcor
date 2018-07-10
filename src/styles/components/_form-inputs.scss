@@ -1,0 +1,21 @@
+textarea.form--question_input {
+  min-height: 100px;
+  height: 100px;
+  max-height: 150px;
+  resize: vertical;
+}
+
+.form--upload__btn {
+  height: 100%;
+}
+
+.form--question {
+  h3 {
+    color: $color-orange;
+  }
+}
+
+.form--question_input {
+  width: 100%;
+  margin: 5px 0;
+}

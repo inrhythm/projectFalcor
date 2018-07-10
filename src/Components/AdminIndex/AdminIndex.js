@@ -3,7 +3,7 @@ import React from 'react';
 class AdminIndex extends React.Component {
 	constructor() {
 		super();
-		
+
 		this.state = {
 			inActivePeople: []
 		}
@@ -19,7 +19,7 @@ class AdminIndex extends React.Component {
 		    return response.json();
 		})
 		.then(data => {
-			
+
 			this.setState({inActivePeople: data[0]})
 		}, error =>{
 			console.log(error)
@@ -29,11 +29,11 @@ class AdminIndex extends React.Component {
 	render() {
       return (
 		<div className="container">
-			{this.state.inActivePeople.map(people => {
-  				return(<div className="col-md-2">
+			{this.state.inActivePeople.map((people, index) => {
+  				return(<div key={index} className="col-md-2">
 					<div ><img src={people.image_url1} alt={people.name}/></div>
 					<div><h2>{people.name}</h2><h4>{people.title}</h4></div>
-					<div><input type="submit" value="View" /><input type="submit" value="Approve" /></div>		
+					<div><input type="submit" value="View" /><input type="submit" value="Approve" /></div>
 				</div>)
 			})}
 		</div>

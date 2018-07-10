@@ -5,8 +5,11 @@
 
 // Global Components
 @import 'components/header';
+@import 'components/buttons';
+@import 'components/form-inputs';
+@import 'components/upload-image__header';
 
-body { overflow: hidden; }
+// body { overflow: hidden; }
 
 .page {
    &-wrapper {
