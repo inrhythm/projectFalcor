@@ -1,16 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import './header.scss'
 
 const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/register'>Register</Link></li>
-        <li><Link to='/admin'>Admin</Link></li>
-      </ul>
-    </nav>
-  </header>
-)
+   <nav className="nav">
+      <Link className="nav-link" to='/'>Home</Link>
+      <Link className="nav-link" to='/register'>Register</Link>
+      <Link className="nav-link" to='/admin'>Admin</Link>
+   </nav>
+);
 
 export default Header

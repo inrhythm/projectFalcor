@@ -1,0 +1,12 @@
+.nav {
+
+   display: block;
+   margin: 10px;
+
+   &-link {
+      padding: 10px;
+      background-color: orangered;
+      color: white;
+      text-decoration: none;
+   }
+}
