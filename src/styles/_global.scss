@@ -87,11 +87,9 @@ ul ol {
   margin-bottom: 0;
 }
 
-nav {
-   ol, ul {
-      @include flatten;
-      list-style-type: none;
-   }
+ol, ul {
+   @include flatten;
+   list-style-type: none;
 }
 
 dfn { font-style: italic; }

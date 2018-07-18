@@ -1,0 +1,68 @@
+.PersonalPage {
+
+   &-container {
+      max-width: 760px;
+      display: block;
+      margin: 30px auto;
+   }
+
+   &-Image {
+      display: flex;
+      width: 300px;
+      height: 300px;
+      border-style: solid;
+      border-width: 2px;
+      border-color: orangered;
+      float: left;
+      margin-right: 30px;
+   }
+
+   &-Title{
+      display: block;
+      font-family: inherit;
+      font-size: 26px;
+      margin-bottom: 5px;
+      line-height: normal;
+   }
+
+   &-Name{
+      display: block;
+      font-family: inherit;
+      font-size: 26px;
+      margin-bottom: 20px;
+      line-height: normal;
+   }
+
+   &-biography {
+      margin-top: 10px;
+      display: block;
+      font-family: inherit;
+      font-size: 22px;
+   }
+
+   &-SocialMedia {
+      clear: both;
+      display:flex;
+      justify-content: space-between;
+      margin-top: 20px;
+   }
+
+   &-SocialMediaImg {
+      width: 40px;
+      height: 40px;
+   }
+
+   &-SocialMediaInfo {
+      padding-left: 10px;
+      font-family: inherit;
+      font-size: 24px;
+   }
+
+   &-Questions {
+      clear: both;
+      display: block;
+      padding-top: 20px;
+      font-family: inherit;
+      font-size: 22px;
+   }
+}

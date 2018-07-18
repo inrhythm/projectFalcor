@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import "../PeoplePage/PeoplePage.scss"
+import "./PersonalPage.scss"
+import Image from "../Image/Image";
 
 class PersonalPage extends Component {
 
@@ -16,61 +17,43 @@ class PersonalPage extends Component {
 
    render() {
       return (
-         <div>
+         <div className="PersonalPage-container">
             {
                this.state.people &&
-
-               (<div>
-                  <div className="">
-                     <img src={this.state.people.image_url1} alt=""/>
-                  </div>
-                  <div>
-                     <span>Name:</span>
-                     <span>{this.state.people.name}</span>
-                  </div>
-                  <div>
-                     <span>Title:</span>
-                     <span>{this.state.people.title}</span>
-                  </div>
-                  <div>
-                     <span>Biography:</span>
-                     <span>{this.state.people.biography}</span>
-                  </div>
-                  <div>
-                     <span>Department:</span>
-                     <span>{this.state.people.department}</span>
-                  </div>
-                  <ul>
+               (<div className="PersonalPage-Info">
+                  <Image className="PersonalPage-Image" src={this.state.people.image_url1} />
+                  <p className="PersonalPage-Title">{this.state.people.title}</p>
+                  <p className="PersonalPage-Name">{this.state.people.name}</p>
+                  <p className="PersonalPage-biography">{this.state.people.biography}</p>
+                  <ul className="PersonalPage-Questions">
+                     {
+                        this.state.people.questions.map((question, index) => {
+                           return (
+                              <li key={index}>
+                                 <p>Q:- {question.question}?</p>
+                                 <p>A:- {question.answer}</p>
+                              </li>
+                           )
+                        })
+                     }
+                  </ul>
+                  <ul className="PersonalPage-SocialMedia">
                      {
                         this.state.people.social_media.map((media, index) => {
                            const mediaName = Object.keys(media)[0];
                            return (
                               <li key={index}>
-                                 <span>{mediaName}</span>
-                                 <span>{media[mediaName]}</span>
+                                 <Image className="PersonalPage-SocialMediaImg" src={require('./' + mediaName + '.png')} />
+                                 <span className="PersonalPage-SocialMediaInfo">{media[mediaName]}</span>
                               </li>
                            )
                         })
 
                      }
                   </ul>
-                  <ul>
-                     {
-                        this.state.people.questions.map((question, index) => {
-                           return (
-                              <li key={index}>
-                                 <span>{question.question}</span>
-                                 <span>{question.answer}</span>
-                              </li>
-                           )
-                        })
-                     }
-                  </ul>
-               </div>)
-            }
+               </div>
+            )}
          </div>
-
-
       );
    }
 
